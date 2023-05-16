@@ -4,12 +4,11 @@ function acceptInput(jsonString){
         //console.log(items)
         arr.push(items)
     }
-    //sort arr based on id
-    arr.sort((a,b)=> a.id-b.id)
-    //remove dupliace based on id
+    
     const uniqueValues = arr.filter((obj,index)=>{
         return index === arr.findIndex(o=>obj.id === o.id &&obj.name === o.name)
     })
+    console.log(uniqueValues);
     arr = []
     for(let item of uniqueValues){
         arr.push(JSON.stringify(item))
